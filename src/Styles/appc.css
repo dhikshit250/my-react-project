@@ -1,0 +1,21 @@
+.app-container {  
+    width: 100%;
+    min-height: 100vh;  /* ✅ Ensures full-page height */
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(walli1.jpeg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(walli1.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* ✅ Ensures background stays in place */
+}
+
