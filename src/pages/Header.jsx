@@ -1,9 +1,10 @@
 import React from "react";
-import "../Styles/headerc.css";  // Ensure correct path
 import { Link } from "react-router-dom";
+import "../Styles/headerc.css";
 
 function Header() {
-  const isLoggedIn = localStorage.getItem("user"); // Check login status
+  const token = localStorage.getItem("token"); // Check if user is logged in
+  const isLoggedIn = !!token; // Convert token presence to boolean
 
   return (
     <div className="banner">
@@ -13,9 +14,9 @@ function Header() {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/booking">Book</Link></li>
-            {isLoggedIn && <li><Link to="/profile">Profile</Link></li>} 
+            {isLoggedIn && <li><Link to="/profile">Profile</Link></li>} {/* Show Profile only if logged in */}
             <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/login">Login</Link></li>
+            {!isLoggedIn && <li><Link to="/login">Login</Link></li>} {/* Show Login only if NOT logged in */}
           </ul>
         </div>
       </div>
