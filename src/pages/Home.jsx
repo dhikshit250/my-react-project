@@ -4,13 +4,13 @@ import "../Styles/homec.css";
 
 function Home() {
   const navigate = useNavigate();
-  const isLoggedIn = localStorage.getItem("user"); // Check login status
+  const isLoggedIn = !!localStorage.getItem("token"); // ✅ Correct check for login status
 
   const handleBookClick = () => {
     if (isLoggedIn) {
-      navigate("/book"); // Navigate to book page if logged in
+      navigate("/booking"); // ✅ Navigate to book page if logged in
     } else {
-      navigate("/login"); // Redirect to login page if not logged in
+      navigate("/login"); // ✅ Redirect to login page if not logged in
     }
   };
 
