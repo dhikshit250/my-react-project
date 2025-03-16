@@ -15,7 +15,7 @@ function Profile() {
     const fetchUserProfile = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await fetch("http://localhost:5000/api/auth/profile", {
+        const response = await fetch("https://b-backend-i75l.onrender.com/api/auth/profile", {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -51,7 +51,7 @@ function Profile() {
 
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/api/auth/upload-profile-pic", {
+      const response = await fetch("https://b-backend-i75l.onrender.com/api/auth/upload-profile-pic", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
@@ -70,7 +70,7 @@ function Profile() {
   const handleProfileUpdate = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:5000/api/auth/update-profile", {
+      const response = await fetch("https://b-backend-i75l.onrender.com/api/auth/update-profile", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -94,7 +94,7 @@ function Profile() {
         {/* Profile Picture & Edit Option */}
         <div style={{ position: "relative", display: "inline-block" }}>
           <img
-            src={user.profile_pic ? `http://localhost:5000/uploads/${user.profile_pic}` : "https://i.imgur.com/KvEuBiI.png"}
+            src={user.profile_pic ? `https://b-backend-i75l.onrender.com/uploads/${user.profile_pic}` : "https://i.imgur.com/KvEuBiI.png"}
             alt="Profile"
             style={{ width: "150px", borderRadius: "50%" }}
           />

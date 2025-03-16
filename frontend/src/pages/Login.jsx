@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault(); // Prevent page reload
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch("https://b-backend-i75l.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
