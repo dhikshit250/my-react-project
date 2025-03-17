@@ -1,117 +1,121 @@
-/* Profile Page Header */
-header {
+/* Profile Page Container */
+.profile-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 15px;
-    background: transparent; 
-    color: #fff; 
-}
-
-/* Profile Image Styling */
-header img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    border: 3px solid #fff; /* Add a border to make it stand out */
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Profile image hover effect */
-header img:hover {
-    transform: scale(1.05);
-}
-
-/* Edit (Pencil) Icon Styling */
-.edit-icon {
-    cursor: pointer;
-    color: #fff;
-    transition: color 0.3s ease-in-out;
-    margin-left: 8px;
-}
-
-.edit-icon:hover {
-    color: #f0a500; /* Change color on hover */
-}
-
-/* Profile Picture Upload Button */
-#profile-upload {
-    display: none; /* Hide default file input */
-}
-
-.profile-edit-container {
+  }
+  
+  /* Profile Picture */
+  .profile-pic-container {
     position: relative;
     display: inline-block;
-}
-
-.profile-edit-container label {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 5px;
+  }
+  
+  .profile-pic {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ddd;
+  }
+  
+  /* Edit Profile Picture Icon */
+  .edit-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
     cursor: pointer;
-}
-
-/* Bio & Work Sections */
-#bio, #work {
-    background: transparent; 
-    padding: 15px;
-    margin: 20px;
-    color: #fff; 
-    border: 1px solid #fff; /* Make it match the project boxes */
-    border-radius: 10px;
-}
-
-/* Editable Input Fields */
-input[type="text"], textarea {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.2); /* Slight transparency */
-    border: none;
-    color: #fff;
-    padding: 10px;
-    font-size: 16px;
-    outline: none;
     transition: 0.3s;
-    border-radius: 5px;
-}
-
-input[type="text"]:focus, textarea:focus {
-    background: rgba(255, 255, 255, 0.4);
-}
-
-/* Projects Section */
-.project {
-    width: 200px;
-    height: 200px;
-    border: 1px solid #fff;  
-    margin: 10px;
-    display: inline-block;
-    text-align: center;
-    line-height: 200px;
-    color: #fff;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Project hover effect */
-.project:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* Save Button */
-button {
-    background-color: #f0a500;
-    color: black;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
+  }
+  
+  .edit-icon:hover {
+    background: #0056b3;
+  }
+  
+  /* Username */
+  .username-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .username-container h1 {
+    font-size: 1.5rem;
     font-weight: bold;
-    transition: background 0.3s ease-in-out;
+  }
+  
+  .username-container input {
+    font-size: 1.2rem;
+    padding: 5px;
     border-radius: 5px;
-}
-
-button:hover {
-    background-color: #ffcc00;
-}
+    border: 1px solid #ccc;
+  }
+  
+  /* About Me Section */
+  .bio-section {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .bio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .bio-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .bio-section p {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  .bio-section textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: none;
+  }
+  
+  /* Save Button */
+  .save-button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .save-button:hover {
+    background: #218838;
+  }
+  
+  /* Edit Icons */
+  .bio-header svg, .username-container svg {
+    cursor: pointer;
+    color: #007bff;
+    transition: 0.3s;
+  }
+  
+  .bio-header svg:hover, .username-container svg:hover {
+    color: #0056b3;
+  }
+  

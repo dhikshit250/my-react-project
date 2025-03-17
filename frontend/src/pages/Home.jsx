@@ -21,7 +21,7 @@ function Home() {
         <p>Book your first video and get an exclusive deal!!</p>
         <div>
           <button type="button" onClick={handleBookClick}>
-            <span></span>BOOK NOW!
+            <span></span>Order Now!
           </button>
         </div>
       </div>

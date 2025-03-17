@@ -1,32 +1,147 @@
-.plans {
+/* General Styles */
+.subscription-container {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Header */
+.subscription-header {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.plan {
-    background-color: #353535;
-    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+    color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 250px;
+}
+
+/* Main Content */
+.subscription-main {
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    margin-top: 70px;
 }
 
-.plan:hover {
-    transform: scale(1.05);
-}
-
-.plan h2 {
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.plan .price {
-    font-size: 24px;
-    font-weight: bold;
-    color: #4caf50;
+.plan-heading {
+    font-size: 1.8rem;
+    color: rgb(255, 255, 255);
     margin-bottom: 20px;
+}
+
+/* Plans Container - Horizontal Layout */
+.plans-container {
+    display: flex;
+    flex-wrap: nowrap; /* Keep all cards in a row */
+    gap: 25px;
+    justify-content: center;
+    max-width: 100%;
+    overflow-x: auto; /* Enable horizontal scroll */
+    padding: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #aaa transparent;
+}
+
+/* Plan Card */
+.plan-card {
+    flex: 0 0 260px; /* Fixed width */
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Selection Animation */
+.plan-card.selected {
+    border: 3px solid lavender;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px #6c63ff;
+    background: linear-gradient(135deg, #ffefef, #b6b3f5);
+}
+
+/* Plan Title - Two Lines */
+.plan-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    white-space: pre-line; /* Ensures the title splits correctly */
+}
+
+/* Plan Features */
+.plan-features {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+/* Feature List Items */
+.plan-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px; /* Space between tick and text */
+    margin: 10px 0; /* Space between points */
+    padding-bottom: 40px; /* Space for separator */
+    border-bottom: 1px solid #ddd; /* Thin line separator */
+}
+
+/* Emoji/Checkmark Styling */
+.plan-features li::before {
+    content: "✅"; /* Green tick emoji */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+  
+/* Remove line from last item */
+.plan-features li:last-child {
+    border-bottom: none;
+}
+
+
+/* Subscribe Button */
+.subscribe-button {
+    background: #6c63ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.subscribe-button:hover {
+    background: #4f49c2;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .plans-container {
+        overflow-x: auto; /* Horizontal scrolling */
+        flex-wrap: nowrap;
+    }
+    
+    .plan-card {
+        flex: 0 0 280px;
+    }
+}
+
+@media (max-width: 600px) {
+    .plans-container {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+    
+    .plan-card {
+        flex: 0 0 300px;
+    }
 }

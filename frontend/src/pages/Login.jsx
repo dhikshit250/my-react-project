@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../Styles/loginc.css";
 
 function Login() {
-  const [email, setEmail] = useState("");
+  const [identifier, setIdentifier] = useState(""); // Accepts email or username
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ function Login() {
       const response = await fetch("https://b-backend-i75l.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ identifier, password }), // Send email or username as "identifier"
       });
 
       const data = await response.json();
@@ -35,22 +35,24 @@ function Login() {
   };
 
   return (
-    <div>
-      <div className="content">
-        <h1>LOGIN TO YOUR ACCOUNT</h1>
-        {error && <p style={{ color: "red" }}>{error}</p>} {/* Show error message */}
+    <div className="login-container">
+      <div className="login-box">
+        <div className="logo"></div> {/* Placeholder for a logo */}
+        <h2>Sign in</h2>
+        {error && <p className="error-message">{error}</p>} {/* Show error message */}
         <form className="login-form" onSubmit={handleSubmit}>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="identifier">Username/Email</label>
           <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)}
+            type="text" 
+            id="identifier" 
+            name="identifier" 
+            value={identifier} 
+            onChange={(e) => setIdentifier(e.target.value)}
             required 
+            placeholder="Enter your username or email"
           />
           
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Password</label>
           <input 
             type="password" 
             id="password" 
@@ -60,10 +62,16 @@ function Login() {
             required 
           />
           
-          <button type="submit"><span></span>LOGIN</button>
+          <div className="forgot-password">
+            <Link to="/forgot-password">Forgot password?</Link>
+          </div>
+
+          <button type="submit">Sign in</button>
         </form>
         
-        <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
+        <p className="signup-text">
+          Not a member? <Link to="/signup">Sign up</Link>
+        </p>
       </div>
     </div>
   );

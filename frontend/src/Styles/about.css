@@ -1,0 +1,74 @@
+.about-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
+  padding: 20px;
+}
+
+.header h2 {
+  font-size: 24px;
+  color: #999;
+}
+
+.header h1 {
+  font-size: 36px;
+  color: #b300ff;
+}
+
+.profile-section {
+  margin-top: 20px;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #b300ff;
+}
+
+.profile-section h2 {
+  margin: 10px 0;
+  font-size: 28px;
+  color: #b300ff;
+}
+
+.skills-section {
+  margin-top: 30px;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.skill {
+  background: #222;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  border: 1px solid #b300ff;
+}
+
+.contact-section {
+  margin-top: 30px;
+}
+
+.contact-section p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 24px;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #b300ff;
+}

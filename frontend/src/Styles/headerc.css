@@ -1,41 +1,111 @@
-/* headerc.css */
-.header-bar {
+.header {
+    background-color: #1a1d25;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #2d2f36;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 10px 0;
-    background: transparent; /* ✅ Ensures it blends with body */
-}
-
-
-.bar {
+    z-index: 1000;
+  }
+  
+  .header-container {
+    width: 90%; /* Reduced from 100% to 90% to decrease side space */
+    max-width: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
-}
-
-.logo {
-    cursor: pointer;
-    padding: 2px;
-    height: 50px;
-}
-
-.navbar {
+    margin: 0 auto; /* Centering the container */
+  }
+  
+  .logo-section {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-}
-
-.navbar ul {
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border: 0;
+  }
+  
+  .logo-text {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .navbar ul {
     list-style: none;
     display: flex;
     gap: 20px;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar ul li a {
+  }
+  
+  .navbar ul li {
+    display: inline;
+  }
+  
+  .navbar ul li a {
+    color: white;
     text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
-}
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .navbar ul li a:hover {
+    color: #6C63FF;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .login-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .login-btn:hover {
+    color: #6C63FF;
+  }
+  
+  .signup-btn {
+    background-color: #6C63FF;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+  }
+  
+  .signup-btn:hover {
+    background-color: #524bc4;
+  }
+  
+  .profile-btn{
+    background-color: #6C63FF;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+    font-size: 16px;
+    gap: 6px; /* Space between icon and text */ 
+    align-items: center;
+    display: flex;
+  }
 
+  .profile-icon {
+    color: white; /* Adjust color */
+  }

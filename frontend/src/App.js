@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Contact from "./pages/Contact";
+import Footer from "./pages/Footer";
 import "./Styles/appc.css";  // ✅ Use this for background
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/contact" element={<Contact/>}/>
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );

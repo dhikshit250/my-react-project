@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../Styles/loginc.css";
+import "../Styles/loginc.css"; // Using the same CSS file
 
 function Signup() {
   const [username, setUsername] = useState("");
@@ -11,7 +11,7 @@ function Signup() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent form refresh
+    e.preventDefault(); // Prevent page reload
 
     if (password !== confirmPassword) {
       setError("Passwords do not match!");
@@ -31,64 +31,68 @@ function Signup() {
         throw new Error(data.error || "Signup failed");
       }
 
-      alert("Signup Successful! Please login.");
-      navigate("/login"); // Redirect to login page
+      // Redirect to login page after successful signup
+      navigate("/login");
     } catch (error) {
       setError(error.message);
     }
   };
 
   return (
-    <div>
-      <div className="content">
-        <h1>CREATE A NEW ACCOUNT</h1>
-        {error && <p style={{ color: "red" }}>{error}</p>} {/* Show error message */}
+    <div className="login-container"> {/* Reusing login styles */}
+      <div className="login-box">
+        <h2>Sign Up</h2>
+        {error && <p className="error-message">{error}</p>} {/* Show error message */}
         <form className="login-form" onSubmit={handleSubmit}>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={username}
+          <label htmlFor="username">Username</label>
+          <input 
+            type="text" 
+            id="username" 
+            name="username" 
+            value={username} 
             onChange={(e) => setUsername(e.target.value)}
-            required
+            required 
+            placeholder="Enter your username"
           />
 
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
+          <label htmlFor="email">Email Address</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            value={email} 
             onChange={(e) => setEmail(e.target.value)}
-            required
+            required 
+            placeholder="Enter your email"
           />
 
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
+          <label htmlFor="password">Password</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            value={password} 
             onChange={(e) => setPassword(e.target.value)}
-            required
+            required 
+            placeholder="Create a password"
           />
 
-          <label htmlFor="confirm-password">Confirm Password:</label>
-          <input
-            type="password"
-            id="confirm-password"
-            name="confirm-password"
-            value={confirmPassword}
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input 
+            type="password" 
+            id="confirmPassword" 
+            name="confirmPassword" 
+            value={confirmPassword} 
             onChange={(e) => setConfirmPassword(e.target.value)}
-            required
+            required 
+            placeholder="Confirm your password"
           />
 
-          <button type="submit"><span></span>SIGN UP</button>
+          <button type="submit">Sign Up</button>
         </form>
-
-        <p>
-          Already have an account? <Link to="/login">Login</Link>
+        
+        <p className="signup-text">
+          Already have an account? <Link to="/login">Sign in</Link>
         </p>
       </div>
     </div>
